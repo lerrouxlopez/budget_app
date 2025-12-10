@@ -205,7 +205,7 @@ impl BudgetApp {
                 );
                 ui.add_space(6.0);
                 ui.horizontal(|ui| {
-                    ui.label(RichText::new("RM").color(Color32::from_rgb(190, 195, 210)));
+                    ui.label(RichText::new("PHP").color(Color32::from_rgb(190, 195, 210)));
                     ui.label(
                         RichText::new(format!("{:+.2}", amount))
                             .color(accent)
@@ -416,14 +416,14 @@ impl eframe::App for BudgetApp {
                         egui::vec2(ui.available_width() * 0.5 - 6.0, 100.0),
                         egui::Layout::top_down(egui::Align::LEFT),
                         |ui| {
-                            Self::stat_card(ui, "All Account (RM)", -self.total_spent(), Color32::from_rgb(127, 138, 255));
+                            Self::stat_card(ui, "All Account (PHP)", -self.total_spent(), Color32::from_rgb(127, 138, 255));
                         },
                     );
                     ui.allocate_ui_with_layout(
                         egui::vec2(ui.available_width(), 100.0),
                         egui::Layout::top_down(egui::Align::LEFT),
                         |ui| {
-                            Self::stat_card(ui, "Bank (RM)", -self.total_spent(), Color32::from_rgb(120, 255, 205));
+                            Self::stat_card(ui, "Bank (PHP)", -self.total_spent(), Color32::from_rgb(120, 255, 205));
                         },
                     );
                 });
@@ -442,7 +442,7 @@ impl eframe::App for BudgetApp {
                                         .color(Color32::from_rgb(160, 165, 175)),
                                 );
                                 ui.label(
-                                    RichText::new(format!("RM {:.2}", self.monthly_budget))
+                                    RichText::new(format!("PHP {:.2}", self.monthly_budget))
                                         .color(Color32::from_rgb(220, 225, 235))
                                         .size(18.0)
                                         .strong(),
@@ -452,14 +452,14 @@ impl eframe::App for BudgetApp {
                             ui.vertical(|ui| {
                                 ui.label(RichText::new("Remaining").color(Color32::from_rgb(160, 165, 175)));
                                 ui.label(
-                                    RichText::new(format!("RM {:.2}", self.remaining()))
+                                    RichText::new(format!("PHP {:.2}", self.remaining()))
                                         .color(Color32::from_rgb(110, 220, 140))
                                         .strong(),
                                 );
                             });
                             ui.with_layout(egui::Layout::right_to_left(egui::Align::Center), |ui| {
                                 ui.horizontal(|ui| {
-                                    ui.label(RichText::new("Budget (RM)").color(Color32::from_rgb(180, 185, 195)));
+                                    ui.label(RichText::new("Budget (PHP)").color(Color32::from_rgb(180, 185, 195)));
                                     ui.add(
                                         egui::TextEdit::singleline(&mut self.budget_input)
                                             .desired_width(100.0),
