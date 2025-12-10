@@ -24,7 +24,12 @@ Requires the WiX binaries in `wix\wix311-binaries`.
 ```bash
 cargo wix -b wix\wix311-binaries
 ```
-Output: `target\wix\budget_app-0.1.0-x86_64.msi`
+Output: `target\wix\dybudget-0.1.0-x86_64.msi`
+
+## Install the app (MSI)
+1. Build or obtain the MSI (see above) and run it: `target\wix\dybudget-0.1.0-x86_64.msi`.
+2. Follow the prompts (default per-machine install). A desktop shortcut named “DYBudget” is placed on the Windows desktop.
+3. Launch via the desktop shortcut or the installed EXE in `C:\Program Files\DYBudget\bin\DYBudget.exe`.
 
 ## State persistence
 Budget and transactions persist to `budget_data.json` in the working directory. Copy this file alongside the executable if you move machines.

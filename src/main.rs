@@ -7,7 +7,7 @@ use std::path::PathBuf;
 fn main() -> eframe::Result<()> {
     let options = eframe::NativeOptions::default();
     eframe::run_native(
-        "Personal Budget",
+        "DYBudget",
         options,
         Box::new(|_cc| Box::new(BudgetApp::default())),
     )

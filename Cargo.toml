@@ -1,8 +1,12 @@
 [package]
-name = "budget_app"
+name = "dybudget"
 version = "0.1.0"
 edition = "2024"
 authors = ["Lerroux Lopez"]
+
+[[bin]]
+name = "DYBudget"
+path = "src/main.rs"
 
 [dependencies]
 eframe = { version = "0.27", features = ["default_fonts", "glow"] }
