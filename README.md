@@ -29,7 +29,7 @@ Output: `target\wix\dybudget-0.1.0-x86_64.msi`
 ## Install the app (MSI)
 1. Build or obtain the MSI (see above) and run it: `target\wix\dybudget-0.1.0-x86_64.msi`.
 2. Follow the prompts (default per-machine install). A desktop shortcut named “DYBudget” is placed on the Windows desktop.
-3. Launch via the desktop shortcut or the installed EXE in `C:\Program Files\DYBudget\bin\DYBudget.exe`.
+3. Launch via the desktop shortcut or the installed EXE in `C:\Program Files\DYBudget\bin\DYBudget.exe`. The app opens without an attached console window and uses the bundled DYBudget icon.
 
 ## State persistence
 Budget and transactions persist to `budget_data.json` in the working directory. Copy this file alongside the executable if you move machines.

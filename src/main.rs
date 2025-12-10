@@ -1,11 +1,22 @@
+#![cfg_attr(target_os = "windows", windows_subsystem = "windows")]
+
 use eframe::egui;
 use egui::{Color32, RichText};
 use serde::{Deserialize, Serialize};
 use std::fs;
 use std::path::PathBuf;
+use std::sync::Arc;
 
 fn main() -> eframe::Result<()> {
-    let options = eframe::NativeOptions::default();
+    let viewport = if let Some(icon) = app_icon() {
+        egui::ViewportBuilder::default().with_icon(icon)
+    } else {
+        egui::ViewportBuilder::default()
+    };
+    let options = eframe::NativeOptions {
+        viewport,
+        ..Default::default()
+    };
     eframe::run_native(
         "DYBudget",
         options,
@@ -336,6 +347,13 @@ impl BudgetApp {
             });
         self.show_new_tx = open;
     }
+}
+
+fn app_icon() -> Option<Arc<egui::IconData>> {
+    let png_bytes = include_bytes!("../assets/icon.png");
+    eframe::icon_data::from_png_bytes(png_bytes)
+        .ok()
+        .map(Arc::new)
 }
 
 impl eframe::App for BudgetApp {
